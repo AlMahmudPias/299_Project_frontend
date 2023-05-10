@@ -160,7 +160,7 @@ const SingleProduct = () => {
                     >
                       Add to Cart
                     </button>
-                    <button className="button signup">Buy It Now</button>
+                    <Link to="/logIn" className="button signup">Buy It Now</Link>
                   </div>
                 </div>
                 <div className="d-flex align-items-center gap-15">

@@ -11,6 +11,8 @@ import gr4 from "../../images/gr4.svg";
 import gr2 from "../../images/gr2.svg";
 import gr3 from "../../images/gr3.svg";
 import gr1 from "../../images/gr.svg";
+import Meta from '../../components/Meta';
+import BreadCrumb from '../../components/BreadCrumb';
 
 
 const Shop = () => {
@@ -51,8 +53,10 @@ const Shop = () => {
   const [grid, setGrid]= useState(4);
     return (
       <div>
+        <Meta title={"Our Store"} />
+      <BreadCrumb title="Our Store 2" />
         
-        <Container class="store-wrapper home-wrapper-2 py-5">
+        <Container class1="store-wrapper home-wrapper-2 py-5">
         <div className="row">
           <div className="col-3">
             <div className="filter-card mb-3">

@@ -4,6 +4,8 @@ import './Product.css';
 import { Link } from 'react-router-dom';
 import ReactStars from "react-rating-stars-component";
 import { TbCurrencyTaka } from 'react-icons/tb';
+import { BsCart4, BsCartFill } from 'react-icons/bs';
+
 
 const Product = ({product , handleAddProduct}) => {
     
@@ -36,7 +38,7 @@ const Product = ({product , handleAddProduct}) => {
                     <b className='product-price'><TbCurrencyTaka className='tk' size={25}/>{price}</b>
                     <br />
                     <button className='add-to-cart-button gap-15' onClick={() => handleAddProduct(product)}>
-                     add to cart
+                     <BsCartFill/> add to cart
                     </button>
                   </div>
                 </div>

@@ -23,6 +23,8 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import PrivateRoute from "./pages/PrivateRoute";
 import Shop from "./store/Shop/Shop";
+import Review from "./store/Review/Review";
+import Cart2 from "./store/Cart/Cart"
 export const userContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
@@ -45,10 +47,13 @@ function App() {
             <Route path="checkout"  element ={<PrivateRoute>
             <Checkout path="/"/>
             </PrivateRoute>}/>
+            <Route path="review" element={<Review />} />
+            
           
             <Route path="compare-product" element={<CompareProduct />} />
             <Route path="wishlist" element={<Wishlist />} />
             <Route path="store" element={<Shop />} />
+            <Route path="cart2" element={<Cart2/>} />
             
             <Route path="login" element={<Login />} />
             <Route path="forgetpassword" element={<Forgotpassword />} />
