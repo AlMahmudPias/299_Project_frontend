@@ -9,7 +9,7 @@ import { useContext, useState } from 'react';
 
 import { userContext } from '../App';
 
-import { createUserWithEmailAndPassword, handleGoogleSignIn, handleSignOut, handleWithFacebook, initializeLogInFrameWork, signInWithEmailAndPassword } from './LogIn_Manager';
+import {  handleGoogleSignIn, handleSignOut, handleWithFacebook, initializeLogInFrameWork, signInWithEmailAndPassword } from './LogIn_Manager';
 
 
 
@@ -30,7 +30,7 @@ const Login = () => {
   const [loggedInUser, setLoggedInUser] = useContext(userContext);
   const navigate = useNavigate();
   const { state } = useLocation();
-  const { from } = state || { from: { pathname: '/shipment' } };
+  const { from } = state || { from: { pathname: '/store' } };
   
   const googleSingIn =() =>{
     handleGoogleSignIn()
@@ -53,22 +53,15 @@ const Login = () => {
   })
  }
   const handleSubmit = (e) => {
-    if (newUser && user.email && user.password) {
-      createUserWithEmailAndPassword(user.email, user.password)
-      .then(res => {
-        handleResponse(res);
-        navigate(from, { replace: true });
-      })
-     
-    }
-    if (!newUser && user.email && user.password) {
+   
+
       signInWithEmailAndPassword(user.email, user.password)
       .then(res => {
        handleResponse(res);
         navigate(from, { replace: true });
       })
       
-    }
+    
     e.preventDefault();
 
   }
@@ -107,7 +100,7 @@ const Login = () => {
             <div className="auth-card">
               <h3 className="text-center mb-3">Login</h3>
               <form onSubmit={handleSubmit} className="d-flex flex-column gap-15">
-                {
+              {
                   newUser &&
                   <div className='form-group'>
                     <label for="exampleInputEmail1">Name</label>
@@ -140,6 +133,8 @@ const Login = () => {
                 </div>
 
               </form>
+
+            
               <div className="auth">
               <button class="loginBtn loginBtn--google" onClick={googleSingIn}>Sign In With Google</button>
              

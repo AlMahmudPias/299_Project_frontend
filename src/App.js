@@ -25,6 +25,7 @@ import PrivateRoute from "./pages/PrivateRoute";
 import Shop from "./store/Shop/Shop";
 import Review from "./store/Review/Review";
 import Cart2 from "./store/Cart/Cart"
+import User from "./pages/Varify_email";
 export const userContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
@@ -35,7 +36,7 @@ function App() {
 
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Layout/>}>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
@@ -48,13 +49,14 @@ function App() {
             <Checkout path="/"/>
             </PrivateRoute>}/>
             <Route path="review" element={<Review />} />
-            
-          
+
             <Route path="compare-product" element={<CompareProduct />} />
             <Route path="wishlist" element={<Wishlist />} />
             <Route path="store" element={<Shop />} />
             <Route path="cart2" element={<Cart2/>} />
-            
+            <Route path="verify-email" element={<User/>} />
+
+  
             <Route path="login" element={<Login />} />
             <Route path="forgetpassword" element={<Forgotpassword />} />
             <Route path="signup" element={<Signup />} />
